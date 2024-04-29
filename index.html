@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Density", { role: "style" }],
+        ["Daily", 8.94, "#b87333"],
+        ["Weekly", 10.49, "silver"],
+        ["Monthly", 19.30, "gold"],
+        ["Quaterly", 21.45, "color: #e5e4e2"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+        {
+          calc: "stringify",
+          sourceColumn: 1,
+          type: "string",
+          role: "annotation"
+        },
+        2]);
+
+      var options = {
+        // title: "Density of Precious Metals, in g/cm^3",
+        width: 350,
+        height: 260,
+        bar: { groupWidth: "45%" },
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+    }
+  </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses'],
+        ['sun', 200, 400],
+        ['mon', 1170, 460],
+        ['Tue', 660, 1120],
+
+
+      ]);
+
+      var options = {
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/9fc4d3e330.js" crossorigin="anonymous"></script>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div class="outer">
+
+    <!-- <div class="back"> -->
+    <div class="navcontainer">
+      <div class="brandName">
+       <div class="img"> <img src="https://st2.depositphotos.com/1810600/5838/v/450/depositphotos_58387439-stock-illustration-abstract-vector-logo.jpg" alt=""></div>
+        <div class="firstName">Olivia</div>
+        <div class="lastName">Miller</div>
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="Search Here.." class="searchs">
+        <button class="switch">Switch Company</button>
+      </div>
+      <div class="dropdown">
+        <select id="dropdownMenu">
+          <option value="option1">Olivia Miller</option>
+
+
+        </select>
+      </div>
+
+      <div class="User">
+        <img src="https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="userpro">
+        <div class="firstname">Welcome back , </div>
+        <div class="lastname">Yoiss</div>
+      </div>
+    </div>
+    <div class="dashboard">
+      <h6 class="dash"> <i class="fa-solid fa-gauge"></i> Dashboard</h6>
+      <ul class="listitem">
+        <li class="listitems"><i class="fa-solid fa-arrow-down-long"></i> Receivables </li>
+        <li class="listitems"><i class="fa-solid fa-arrow-left"></i>Returns</li>
+        <li class="listitems"><i class="fa-regular fa-user"></i>Costumers</li>
+        <li class="listitems"><i class="fa-regular fa-wallet"></i>Payable</li>
+        <li class="listitems"><i class="fa-regular fa-dollar-sign"></i>Sales</li>
+        <li class="listitems"> <i class="fa-solid fa-list"></i>Inventory</li>
+        <li class="listitems"><i class="fa-solid fa-arrow-down-long"></i>Imports</li>
+        <li class="listitems"><i class="fa-regular fa-ticket"></i>Cutting Tickets</li>
+        <li class="listitems"><i class="fa-solid fa-arrows-turn-to-dots"></i>EDI</li>
+      </ul>
+    </div>
+
+
+    <div class="sidenav">
+      <ul class="list-group list-group-flush">
+        <h5 class="rep"> <i class="fa-solid fa-arrow-trend-up"></i>Reports</h5>
+        <li class="list-grou-item">Company Snapshot<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Open Order Report<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Cut & Sold Lookup<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Inventory Snap Shot<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Balance to Sell Sales Summary<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Open Order To Pick <i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Period Comparison Report<i class="fa-solid fa-greater-than"></i></li>
+
+        <li class="list-grou-item">SR Avalibility<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Sales Forecast Report<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Detailed Period Comparison Report<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Style Cost Report<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Style Cost Report (Sales Person)<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Shopping / Recieving Log<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Recieving Summary<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Style Avalibitlity By Date<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Purchase Order Report<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Shipping Report<i class="fa-solid fa-greater-than"></i></li>
+
+        <li class="list-grou-item">Traffic Report<i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Image Cut & Sold Report <i class="fa-solid fa-greater-than"></i></li>
+        <li class="list-grou-item">Style Sheets<i class="fa-solid fa-greater-than"></i></li>
+      </ul>
+    </div>
+    <div class="data">
+      <div class="numlist">
+
+        <div class="amt"> <i class="fa-solid fa-dollar-sign" id="dollar"></i>$32350.00
+          <div class="lower"> Total Revenue</div>
+        </div>
+        <div class="amt"> <i class="fa-solid fa-up-right-from-square" id="up"></i>$6000
+          <div class="lower">Total Expences</div>
+
+        </div>
+        <div class="amt"><i class="fa-regular fa-image" id="gallery"></i>3,478
+          <div class="lower"> Items Missing</div>
+
+        </div>
+        <div class="amt"> <i class="fa-solid fa-comments-dollar" id="co"></i></i>237
+          <div class="lower">Misiing Item Cost</div>
+
+        </div>
+
+      </div>
+      <div class="invoices">
+        <p class="inv">Invoices</p>
+        <div class="date">
+          <label for="dateInput" class="daate"> invoicing from :</label>
+          <input type="date" id="dateInput" name="dateInput">
+        </div>
+
+      </div>
+      <div id="curve_chart" class="chart1"></div>
+    </div>
+
+    <div class="datas">
+      <div class="numlist">
+
+        <div class="amt"><i class="fa-solid fa-wallet" id="blue"></i>$56,034.00 <div class="lower">Accounts Recievable</div>
+        </div>
+        <div class="amt"><i class="fa-solid fa-wallet" id="pink"></i>$67,083.00 <div class="lower">Accounts Payable</div>
+        </div>
+        <div class="amt"><i class="fa-solid fa-dollar-sign" id="up"></i>160 <div class="lower">Missing Cost</div>
+        </div>
+        <div class="amt"><i class="fa-solid fa-book" id="gallery"></i>0/$0.00 <div class="lower">Booked</div>
+        </div>
+
+
+      </div>
+      <div class="forecast">
+        <div class="salesf"> Sales forecast</div>
+        <div class="when">
+          <input type="radio" name="frequency" id="daily" class="inpu">
+          <label for="daily">Daily</label>
+
+          <input type="radio" name="frequency" id="weekly" class="inpu">
+          <label for="weekly">Weekly</label>
+
+          <input type="radio" name="frequency" id="monthly" class="inpu">
+          <label for="monthly">Monthly</label>
+
+          <input type="radio" name="frequency" id="quarterly" class="inpu">
+          <label for="quarterly">Quarterly</label>
+        </div>
+
+      </div>
+
+      <div id="columnchart_values" class="chart1"></div>
+
+
+
+
+    </div>
+
+    <!-- </div> -->
+  </div>
+</body>
+
+</html>
